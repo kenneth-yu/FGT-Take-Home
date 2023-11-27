@@ -9,10 +9,10 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  
+
   return (
     <div style={{ fontFamily: "Inter, sans-serif", lineHeight: "1.8" }}>
-      <ListingsPage/>
+      <ListingsPage />
     </div>
   );
 }

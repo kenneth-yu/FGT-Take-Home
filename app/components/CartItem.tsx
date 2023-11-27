@@ -36,43 +36,43 @@ export const CartItem: React.FC<CartItemProps> = ({
                 //can either remove the item if it hits 0 OR disable the minus button when there is only quantity 1
                 shoppingCartItems[foundItemIndex].quantity -= 1
                 setShoppingCartItems([...shoppingCartItems])
-                if (id === 1532751872052 ) {
+                if (id === 1532751872052) {
                     const foundRecIndex = shownRecommendations.findIndex((item) => item.id === id)
-                    if(foundRecIndex === -1 && shoppingCartItems[foundItemIndex].quantity < numOfTrees){
+                    if (foundRecIndex === -1 && shoppingCartItems[foundItemIndex].quantity < numOfTrees) {
                         setShownRecommendations([...shownRecommendations, itemDetails])
                     }
-                }else if(product_type === 'Tree'){ //This helps recheck if numOfTrees === Tree Planting Kits
+                } else if (product_type === 'Tree') { //This helps recheck if numOfTrees === Tree Planting Kits
                     const foundTreePlantingKitInCart = shoppingCartItems.findIndex((item) => item.id === 1532751872052)
                     const foundRecIndex = shownRecommendations.findIndex((item) => item.id === 1532751872052)
-                    if(shoppingCartItems[foundTreePlantingKitInCart].quantity === numOfTrees){
+                    if (shoppingCartItems[foundTreePlantingKitInCart].quantity === numOfTrees) {
                         shownRecommendations.splice(foundRecIndex, 1)
                         setShownRecommendations([...shownRecommendations])
                     }
                 }
             }
         } else {
-            if (id === 1532751872052 ) {
+            if (id === 1532751872052) {
                 const foundTreeKit = shownRecommendations.findIndex((item) => item.id === id)
-                if(shoppingCartItems[foundItemIndex].quantity < numOfTrees){
+                if (shoppingCartItems[foundItemIndex].quantity < numOfTrees) {
                     shoppingCartItems[foundItemIndex].quantity += 1
-                    if(shoppingCartItems[foundItemIndex].quantity === numOfTrees){
+                    if (shoppingCartItems[foundItemIndex].quantity === numOfTrees) {
                         shownRecommendations.splice(foundTreeKit, 1)
                         setShownRecommendations([...shownRecommendations])
                     }
                     setShoppingCartItems([...shoppingCartItems])
-                }else{
+                } else {
                     shoppingCartItems[foundItemIndex].quantity += 1
                     setShoppingCartItems([...shoppingCartItems])
                 }
 
-            }else{
+            } else {
                 shoppingCartItems[foundItemIndex].quantity += 1
                 setShoppingCartItems([...shoppingCartItems])
-                if(product_type === 'Tree'){ //This helps recheck if numOfTrees === Tree Planting Kits
+                if (product_type === 'Tree') { //This helps recheck if numOfTrees === Tree Planting Kits
                     const foundTreePlantingKitInCart = shoppingCartItems.findIndex((item) => item.id === 1532751872052)
                     const foundRecIndex = shownRecommendations.findIndex(item => item.id === 1532751872052)
-                    if(foundRecIndex === -1 && shoppingCartItems[foundTreePlantingKitInCart].quantity <= numOfTrees){
-                        const treePlantingKit = allRecommendations.find((item) => item.id === 1532751872052 )
+                    if (foundRecIndex === -1 && shoppingCartItems[foundTreePlantingKitInCart].quantity <= numOfTrees) {
+                        const treePlantingKit = allRecommendations.find((item) => item.id === 1532751872052)
                         setShownRecommendations([...shownRecommendations, treePlantingKit])
                     }
                 }
@@ -88,7 +88,7 @@ export const CartItem: React.FC<CartItemProps> = ({
         //if one of the id exists as a recommended
         if (id === 4813305610302 || id === 1532751872052) {
             const foundRecIndex = shownRecommendations.findIndex((item) => item.id === id)
-            if(foundRecIndex === -1){
+            if (foundRecIndex === -1) {
                 setShownRecommendations([...shownRecommendations, itemDetails])
             }
         }

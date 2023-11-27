@@ -5,13 +5,13 @@ import { DetailsPage } from "~/pages/DetailsPage";
 import data from "~/consts/dummyData.json"
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "Fast Growing Trees" },
-    { name: "description", content: "Fast Growing Trees Take Home!" },
-  ];
+    return [
+        { title: "Fast Growing Trees" },
+        { name: "description", content: "Fast Growing Trees Take Home!" },
+    ];
 };
 
-export const loader: LoaderFunction = async({ params, request }) =>{
+export const loader: LoaderFunction = async ({ params, request }) => {
     const { id } = params
     const url = new URL(request.url)
 
@@ -20,10 +20,10 @@ export const loader: LoaderFunction = async({ params, request }) =>{
     const foundProduct = products.find(product => product?.id.toString() === id)
     if (!foundProduct) {
         throw new Response(null, {
-          status: 404,
-          statusText: "Not Found",
+            status: 404,
+            statusText: "Not Found",
         });
-      }
+    }
     return json(foundProduct)
 }
 

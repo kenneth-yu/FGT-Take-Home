@@ -1,3 +1,8 @@
+This was created using the generic remix sandbox. All you need to run the application is to a simple `npm install` followed by a `npm run dev`
+
+Given more time, there are a few places where the code can be refactored for a little bit more reusability. Some of the designs could also be a little more precise and flushed out with the guidance from a designer. 
+
+
 # Welcome to Remix!
 
 - [Remix Docs](https://remix.run/docs)

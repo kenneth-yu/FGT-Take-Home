@@ -10,14 +10,13 @@ export const ListingCard: React.FC<Props> = ({
     const [imgSrc, setImgSrc] = useState(thumbnail.src)
 
     const handleMissingImg = (e: any) => {
-        console.log(e.target)
         e.stopPropagation()
         setImgSrc(FallBackTreeImage)
     }
 
-    return(
+    return (
         <a href={`/id/${id}`} className='listing-card'>
-            <img className='listing-thumbnail' onError={handleMissingImg} src={imgSrc}/>
+            <img className='listing-thumbnail' onError={handleMissingImg} src={imgSrc} />
             <span className='listing-title'>{title}</span>
         </a>
     )

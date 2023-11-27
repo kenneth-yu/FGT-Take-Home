@@ -13,7 +13,7 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
 }) => {
     const addToCart = () => {
         const duplicateItemIndex = shoppingCartItems.findIndex((item: ShoppingCartItem) => item.id === id)
-        if(duplicateItemIndex === -1){
+        if (duplicateItemIndex === -1) {
             //If item is not already in cart
             const itemDetails = {
                 id,
@@ -24,12 +24,12 @@ export const DetailsCard: React.FC<DetailsCardProps> = ({
                 quantity: 1
             }
             setShoppingCartItems([...shoppingCartItems, itemDetails])
-        }else{
+        } else {
             shoppingCartItems[duplicateItemIndex].quantity += 1
             setShoppingCartItems([...shoppingCartItems])
         }
     }
-    return(
+    return (
         <div>
             <div className='details-card'>
                 <div className='details-title'>{title}</div>

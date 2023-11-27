@@ -8,11 +8,11 @@ import { ShoppingCartItem } from '../types'
 
 
 export interface Props {
-    shoppingCartItems: ShoppingCartItem[] 
+    shoppingCartItems: ShoppingCartItem[]
     setShoppingCartItems: Dispatch<SetStateAction<ShoppingCartItem[]>>
 }
 
-export const NavBar: React.FC<Props> = ({shoppingCartItems, setShoppingCartItems}) => {
+export const NavBar: React.FC<Props> = ({ shoppingCartItems, setShoppingCartItems }) => {
     const [showCartOverlay, setShowCartOverlay] = useState(false)
     const [quantity, setQuantity] = useState(0)
     const [subtotal, setSubtotal] = useState(0)
@@ -25,14 +25,14 @@ export const NavBar: React.FC<Props> = ({shoppingCartItems, setShoppingCartItems
         shoppingCartItems.forEach((item) => {
             quantityCounter += item.quantity
             subtotalCounter += (item.quantity * item.price)
-            if(item.product_type === 'Tree'){
+            if (item.product_type === 'Tree') {
                 numOfTreesCounter += item.quantity
             }
         })
         setQuantity(quantityCounter)
         setSubtotal(subtotalCounter)
         setNumOfTrees(numOfTreesCounter)
-    },[shoppingCartItems])
+    }, [shoppingCartItems])
 
     const showHideCart = () => {
         setShowCartOverlay(!showCartOverlay)
@@ -40,19 +40,19 @@ export const NavBar: React.FC<Props> = ({shoppingCartItems, setShoppingCartItems
 
     return (
         <div id='nav-bar'>
-            {showCartOverlay && <CartOverlay 
+            {showCartOverlay && <CartOverlay
                 showHideCart={showHideCart}
                 shoppingCartItems={shoppingCartItems}
                 setShoppingCartItems={setShoppingCartItems}
                 subtotal={subtotal}
                 numOfTrees={numOfTrees}
-                />}
+            />}
             <a href='/'>
                 <img id='logo' className='nav-img' src={logo} alt="fast-growing-trees-logo" />
             </a>
             <div className='cart-icon-container' onClick={showHideCart}>
                 <img onClick={showHideCart} id='cart-icon' className='nav-img' src={cartIcon} alt="cart-icon" />
-                {quantity > 0 && <img id='quantity-ellipse' src={ellipse}/>}
+                {quantity > 0 && <img id='quantity-ellipse' src={ellipse} />}
                 {quantity > 0 && <span id='cart-quantity'>{quantity}</span>}
             </div>
         </div>
