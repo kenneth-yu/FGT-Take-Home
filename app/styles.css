@@ -8,6 +8,8 @@ body {
 
 .page-container {
     max-width: 1100px;
+    min-width:260px;
+    width:100%;
 }
 
 .nav-img {
