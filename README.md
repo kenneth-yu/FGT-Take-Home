@@ -1,4 +1,4 @@
-This was created using the generic remix sandbox. All you need to run the application is to a simple `npm install` followed by a `npm run dev`
+This was created using the generic remix sandbox. All you need to run the application is to a simple `npm install` followed by a `npm run dev`. The usual app url will be `localhost:3000` but be sure to take a look at the console output just incase the port is already in use. 
 
 Given more time, there are a few places where the code can be refactored for a little bit more reusability. Some of the designs could also be a little more precise and flushed out with the guidance from a designer. 
 
